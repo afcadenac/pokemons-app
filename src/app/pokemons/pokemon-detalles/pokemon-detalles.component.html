@@ -1,0 +1,5 @@
+<div *ngIf="detallesPokemon" class="d-flex flex-column justify-content-center p-2">
+    <h2 class="text-center" >{{ detallesPokemon.name }}</h2>
+    <img [src]="detallesPokemon.sprites.front_default" alt="{{ detallesPokemon.name }}" />
+    <a [routerLink]="['/pokemon', detallesPokemon.id]" class="text-center">ver mas...</a>
+</div>

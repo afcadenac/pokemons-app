@@ -1,0 +1,17 @@
+<div class="row p-3 m-1">
+  <input placeholder="Buscar Pokémon" class="mx-2 col" #txtPokemon/>
+  <button (click)="buscar(txtPokemon.value)" class="btn btn-primary col-2 mx-2">Buscar</button>
+</div>
+
+<div class="row p-3 m-1" *ngIf="pokemonList; else cargando">
+
+  <div *ngFor="let pokemon of pokemonList" class="border border-black col m-2 bg-info-subtle">
+    <a >
+      <app-pokemon-detalles [pokemon]="pokemon"></app-pokemon-detalles>
+    </a>
+  </div>
+</div>
+
+<ng-template #cargando>
+  <h1>cargando</h1>
+</ng-template>

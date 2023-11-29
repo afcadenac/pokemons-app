@@ -1,0 +1,48 @@
+<div *ngIf="pokemonInfo" class="row m-5 p-5 border border-black bg-info-subtle">
+
+    <h2 class="text-center mb-4">{{ pokemonInfo.name }}</h2>
+
+    <div class="col-4 text-center">
+        
+        <img [src]="pokemonInfo.sprites.front_default" alt="{{ pokemonInfo.name }}" class="image-card border border-black bg-white"/>
+        
+    </div>
+
+    <div class="col-8 row">
+
+        <div class="mb-3 d-flex">   
+            <p class="me-2">capacidades:</p>
+
+            <div class="d-flex flex-wrap">
+                <p *ngFor="let ability of pokemonInfo.abilities" >{{ability.ability.name}}, </p>
+            </div>
+        </div>
+
+        <div class="mb-3 d-flex">
+            <p class="me-2">formas:</p>
+
+            <div class="d-flex flex-wrap">
+                <p *ngFor="let form of pokemonInfo.forms" >{{form.name}}, </p>
+            </div>
+        </div>
+
+        <div class="mb-3 d-flex"> 
+            <p class="me-2">movimientos:</p>
+            
+            <div class="d-flex flex-wrap">
+                <p *ngFor="let move of pokemonInfo.moves" >{{move.move.name}}, </p>
+            </div>
+
+        </div>
+
+        <div class="mb-3 d-flex">
+            <p class="me-2">tipos:</p>
+
+            <div class="d-flex flex-wrap">
+                <p *ngFor="let type of pokemonInfo.types" >{{type.type.name}}, </p>
+            </div>
+        </div>
+    </div>
+    
+    <a [routerLink]="['/']" class="text-center btn btn-danger">volver</a>
+</div>
