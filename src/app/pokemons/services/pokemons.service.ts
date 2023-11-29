@@ -20,9 +20,5 @@ export class PokemonService {
   traerListaPokemon(): Observable<any> {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=1500`);
   }
-  
-  traerIdUrl(url: string): string {
-    const segmentos = url.split('/');
-    return segmentos[segmentos.length - 2];
-  }
+
 }

@@ -16,7 +16,7 @@ export class PokemonDetallesComponent {
 
 
   ngOnInit(): void {
-    this.traerDetallesPokemon(this.pokemon.url); // Cambia el número según el Pokémon que desees mostrar
+    this.traerDetallesPokemon(this.pokemon.url);
   }
 
   traerDetallesPokemon(url:string): void {
